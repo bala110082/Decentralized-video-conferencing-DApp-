@@ -93,4 +93,4 @@ This project is licensed under the MIT License.
 
 ## 🙋‍♂️ Author
 
-- [V-Varadharajan](https://github.com/V-Varadharajan)
+- [Bala R]
