@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="log.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask Sign In</title>
+    <style>
+        /* Reset some default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base body styles */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Container styles */
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings */
+.container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+input {
+        width: 100%; /* Makes input take full width of container */
+        padding: 12px 15px; /* Increases inner spacing */
+        margin: 8px 0; /* Adds vertical spacing between inputs */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #333;
+    }
+
+    button{
+        
+        width: 100%; /* Makes input take full width of container */
+        padding: 12px 15px; /* Increases inner spacing */
+        margin: 8px 0; /* Adds vertical spacing between inputs */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #333;
+    
+    }
+/* Input field*
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Decentralized Video Conferencing</h2>
+        <h2>Sign In with MetaMask</h2>
+        <form id="signinForm">
+            <input type="text" id="name" placeholder="Enter your name" required><br>
+             <input type="mail" id="mail" placeholder="Enter your email" required><br>
+            <button type="submit" id="connectButton">Connect Wallet</button>
+        </form>
+        <p id="userAddress"></p>
+    </div>
+    <script>
+        document.getElementById('connectButton').addEventListener('click', async (event) => {
+            event.preventDefault();
+            if (window.ethereum) {
+                try {
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    document.getElementById('userAddress').innerText = `Connected: ${accounts[0]}`;
+                    // Redirect to index.html after successful connection
+                    window.location.href = "/sign.html";
+                } catch (error) {
+                    console.error(error);
+                }
+            } else {
+                alert('MetaMask is not installed. Please install it to use this feature.');
+            }
+        });
+    </script>
+</body>
+</html>
